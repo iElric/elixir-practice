@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="column">
+    <p><%= link "← go back", to: "/" %></p>
+    <h2>Factor Results</h2>
+
+    <p>The prime factors in sorted order of <%= @x %> are [<%= Enum.join(@y, ", ") %>]</p>
+  </div>
+</div>
