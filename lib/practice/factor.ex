@@ -1,11 +1,13 @@
 defmodule Practice.Factor do
-  define factor(x) do
-
+  def factor(x) do
+    factor_helper(x, 2, [])
   end
 
-  define factor_helper(x, n, list) do
+  def factor_helper(x, n, list) do
     cond do
-      n < x and rem(x, acc) == 0 -> factor_helper()
+      n < x and rem(x, n) == 0 -> factor_helper(div(x, n), n, list ++ [n])
+      n >= x -> list ++ [n]
+      true -> factor_helper(x, n + 1, list)
     end
   end
 end
